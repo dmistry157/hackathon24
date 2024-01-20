@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    height: 30px;
+    background-color: #000;
+    background-size: cover;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1{
+    margin: 0;
+    color:#fff;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+article {
+    padding: 10px;
+    background-color: rgb(137, 94, 78);
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto; /* Pushes the container to the bottom */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.italic-text {
+    font-style: italic;
+}
+
+.marge {
+    margin: 2px;
+}
+
+.cent {
+    text-align: center;
+}
+
+img {
+    border: 2px solid #000;
+}
+
+.product-image{
+    border: #fff;
+}
+
+.black {
+    color: black;
+}
+
+#uploaded-image{
+    width: 300px;
+    height: 100px;
+}
+
+
+#profileContainer {
+    position: absolute;
+    top: 5px;
+    right: 5px;            
+}
+
+#profileButton {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#homeButtonContainer {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+#homeButton {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.browseToMain{
+    width: 100%;
+}
+
+.browseToProfile{
+    width: 100%;
+}

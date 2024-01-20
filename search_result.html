@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+    <link rel="stylesheet" href="browse.css"> <!-- Link to your main CSS file -->
+    <style>
+        /* Additional styles for search result page */
+        body {
+            background-color: #4CAF50; /* Green background */
+            color: #fff;
+        }
+
+        .result-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-container {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #e0e0e0; /* Light gray background for items */
+            border-radius: 8px;
+        }
+
+        .item-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #000;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .item-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .item-container p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="result-container">
+
+    <div class="item-container">
+        <h2 class="black cent italic-text">Headphones</h2>
+        <div class="cent marge">
+            <img src="Arhaan.jpg" alt="Description of the image">
+            <br>
+            <button onclick="redirectToTradePage('Arhaan.jpg')">Trade</button>
+        </div>
+        <p class="cent black ">Arhaan is looking to trade his headphones for a new phone. Is anyone looking to get rid of a phone?</p>
+    </div>
+
+    <!-- Add more item containers as needed -->
+    <!-- Item 2: Water Bottle for iPhone 15 -->
+    <div class="item-container">
+        <h2 class="centered-text italic-text">Water Bottle for iPhone 15</h2>
+        <div class="cent marge">
+            <img src="pic1.jpeg" alt="Description of the image">
+            <br>
+            <button onclick="redirectToTradePage('pic1.jpeg')">Trade</button>
+        </div>
+        <p class="cent">Benjamin has decided to barter a water bottle for an iPhone 15.</p>
+    </div>
+
+    <!-- Item 3: Coffee for Brand New iPhone -->
+    <div class="item-container">
+        <h2 class="centered-text italic-text">Coffee for Brand New iPhone</h2>
+        <div class="cent marge">
+            <img src="pic2.jpeg" alt="Description of the image">
+            <br>
+            <button onclick="redirectToTradePage('pic2.jpeg')">Trade</button>
+        </div>
+        <p class="cent">Dhilen has decided to barter his coffee for a brand new iPhone.</p>
+    </div>
+
+    <!-- Item 4: Old iPad for Phone -->
+    <div class="item-container">
+        <h2 class="centered-text italic-text">Old iPad for Phone</h2>
+        <div class="cent marge">
+            <img src="pic3.jpeg" alt="Description of the image">
+            <br>
+            <button onclick="redirectToTradePage('pic3.jpeg')">Trade</button>
+        </div>
+        <p class="cent">Leonardo has decided to barter his old iPad away; he would like a phone in return.</p>
+    </div>
+
+</div>
+
+<script>
+    // Function to redirect to trade_page.html with image source parameter
+    function redirectToTradePage(imageSrc) {
+        window.location.href = 'trade_page.html?imageSrc=' + encodeURIComponent(imageSrc);
+    }
+</script>
+
+</body>
+</html>

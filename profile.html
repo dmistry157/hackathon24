@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <title>User Profile</title>
+</head>
+<body>
+
+    <header>
+        <div id="homeButtonContainer">
+            <a href="main.html" id="homeButton">
+                <img src="treasuretradelogo.png" alt="Logo Icon">
+            </a>
+        </div>
+        
+        <div id="profileContainer">
+            <a href="profile.html" id="profileButton"><img src="profile-icon.jpg" alt="Profile Icon"></a>
+        </div>
+    </header>
+   
+    <section id="profile">
+        <div class="profile-container">
+            <img src="profile-icon.jpg" alt="User Profile Picture">
+        </div>
+        <h2>John Doe</h2>
+        <p>Email: john.doe@example.com</p>
+        <p>Location: City, Country</p>
+    </section>
+
+    <div id="loginContainer">
+        <h2>Login/Sign Up</h2>
+        <form onsubmit="checkAndNavigate(); return false;">
+            <input type="email" id="input1" placeholder="Email" required>
+            <input type="password" id="input2" placeholder="Password" required>
+            <button class="marge" type="submit">Login</button>
+            <button type="button">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        function checkAndNavigate() {
+            // Get the values of the two inputs
+            var input1Value = document.getElementById("input1").value;
+            var input2Value = document.getElementById("input2").value;
+
+            // Check if both inputs are not empty
+            if (input1Value && input2Value) {
+                // Store the values in localStorage
+                localStorage.setItem("userEmail", input1Value);
+                localStorage.setItem("userPassword", input2Value);
+
+                // Add a one-second delay before navigating
+                setTimeout(function() {
+                    // Navigate to main.html
+                    window.location.href = "main.html";
+                }, 750);
+            }
+        }
+    </script>
+
+    <div id="myItems"></div>
+
+</body>
+</html>

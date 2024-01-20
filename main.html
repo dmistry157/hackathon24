@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Home Page</title>
+    <link rel="stylesheet" href="stylesheet.css">
+
+</head>
+
+<body>
+
+<header>
+    <nav class = "nav main nav">
+        <div id="homeButtonContainer">
+            <a href="main.html" id="homeButton">
+                <img src="treasuretradelogo.png" alt="Logo Icon"></a>
+            </a>
+        </div>
+        <h1 class = "italic-text title-text marge">Treasure Trade</h1>
+        <div id="welcomeMessage"></div>
+        <script>
+            // Retrieve the stored email and password from localStorage
+            var storedEmail = localStorage.getItem("userEmail");
+            var storedPassword = localStorage.getItem("userPassword");
+    
+            var temp = "";
+            for (var i = 0; i < storedEmail.length; i++) {
+                if (storedEmail[i] != "@") {
+                    temp += storedEmail[i];
+                } else {
+                    break;
+                }
+            }
+    
+            welcomeMessage.innerHTML += "<p>Welcome, " + temp + "!</p>";
+        </script>
+        <h4>"One Man's Trash is Another Man's Treasure"</h4>
+        <button id="searchButton" onclick="showSearchBox()">Search</button>
+        <div id="profileContainer">
+            <a href="profile.html" id="profileButton"><img src="profile-icon.jpg" alt="Profile Icon"></a>
+        </div>
+    </nav>
+</header>
+<script>
+    function showSearchBox() {
+        var searchBox = prompt("Enter your search query:");
+        if (searchBox !== null && searchBox !== "") {
+            var redirectUrl;
+
+            // Check if the search query is "sneakers"
+            if (searchBox.toLowerCase() === 'sneakers') {
+                // Redirect to the sneakers_page.html
+                redirectUrl = 'sneakers_page.html';
+            } else if (searchBox.toLowerCase() === 'iphone') {
+                // Redirect based on the iPhone command
+                redirectUrl = 'search_result.html?query=iphone';
+            } else {
+                // Default redirect for other queries
+                redirectUrl = 'search_result.html?query=' + encodeURIComponent(searchBox);
+            }
+
+            window.location.href = redirectUrl;
+        }
+    }
+</script>
+
+<main>
+    <section class="left">
+        <h2 class="centered-text italic-text bigger-text"> Browse</h2>
+        <p>Click this link below to go to a browsing page with items people are looking to get rid of. Will you strike it lucky? Will you find treasure in a land full of trash?</p>
+        <br>
+        <button onclick="window.location.href='browse.html'" id="leftButton">Browse Page</button>
+    </section>
+
+    <section class="right">
+        <h2 class="centered-text italic-text bigger-text"> List</h2>
+        <p>Click the link below to get rid of your put your items online for a future buyer. Although you may no longer want your items, someone else surely will! </p>
+        <br>
+        <button onclick="window.location.href='list.html'">List Page</button>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; TreasureTradeCo. About Page below.</p>
+    <button onclick="window.location.href='aboutUs.html'">About Us Page</button>
+    <p>Contact us at treasuretrade@gmail.com</p>
+</footer>
+
+</body>
+<script>
+    console.log("start")
+    
+
+    var slideTime = 2000; // 2 seconds
+    var i = 0;
+    var images = [];
+
+    images[0] = 'Arhaan.jpg';
+    images[1] = 'Ben.jpg';
+    images[2] = 'Dhilen.jpg';
+    images[3] = 'Leo.jpg';
+    images[4] = 'Tiga.jpg';
+    function changePicture() {
+    
+
+    let widget = document.getElementById("leftButton");
+    
+
+        
+        widget.style.backgroundImage = `url(/${images[i]})`;
+
+        // widget.backgroundImage = images[i];
+    }
+    setInterval(()=>{
+        if (i < images.length - 1) {
+            i++;
+        } else {
+            i = 0;
+        }
+        changePicture()
+    }, slideTime);
+    
+    //window.addEventListener("load", (event) => {console.log("page is fully loaded");});
+
+</script>
+</html>

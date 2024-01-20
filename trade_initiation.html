@@ -1,0 +1,143 @@
+<!-- trade_initiation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Initiation</title>
+    <link rel="stylesheet" href="browse.css"> <!-- Link to your main CSS file -->
+    <style>
+        body {
+            background-color: #232f3e; /* Amazon-like background color */
+            color: #fff;
+            font-family: 'Arial', sans-serif; /* Change the font style here */
+        }
+
+        .initiation-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .initiation-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .initiation-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #000;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .dm-section,
+        .offer-section {
+            text-align: center;
+            margin-top: 20px;
+            color: #000; /* Set the font color to black */
+        }
+
+        textarea {
+            width: calc(100% - 20px);
+            height: 100px;
+            margin-top: 10px;
+            resize: none;
+            color: #000; /* Set the font color to black */
+        }
+
+        .authenticity-score {
+            font-size: 18px;
+            margin-top: 20px;
+            color: #000; /* Set the font color to black */
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ff9900; /* Amazon-like orange color */
+            color: #232f3e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .offer-status {
+            font-weight: bold;
+            color: #000; /* Black color */
+            background-color: #ffcc00; /* Highlight color */
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="initiation-container">
+    <div class="initiation-header">
+        <h2>Trade Initiation</h2>
+        <!-- Retrieve traderName and imageUrl from the URL parameters -->
+        <p>Initiating trade with: <strong id="traderName"></strong></p>
+    </div>
+
+    <img class="initiation-image" id="offerImage" alt="Offer Image">
+
+    <!-- DM Section -->
+    <div class="dm-section">
+        <h2>Direct Message</h2>
+        <p>Click the button below to create a direct message.</p>
+        <textarea placeholder="Type your message here"></textarea>
+        <button onclick="createDM()">Create DM</button>
+        <p id="dmStatus"></p>
+    </div>
+
+    <!-- Place Offer Section -->
+    <div class="offer-section">
+        <h2>Place Offer</h2>
+      
+        <button onclick="placeOffer()">Place Offer</button>
+        <p class="offer-status" id="offerStatus"></p>
+    </div>
+
+</div>
+
+<script>
+    // Get the traderName and imageUrl from the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const traderName = urlParams.get('traderName');
+    const imageUrl = urlParams.get('imageUrl');
+
+    // Set the traderName and offerImage in the HTML
+    const traderNameElement = document.getElementById('traderName');
+    const offerImageElement = document.getElementById('offerImage');
+
+    if (traderNameElement && offerImageElement) {
+        traderNameElement.textContent = traderName;
+        offerImageElement.src = imageUrl;
+    }
+
+    // Function to create a direct message
+    function createDM() {
+        // Implement your logic for creating a direct message
+        const message = document.querySelector('textarea').value;
+        document.getElementById('dmStatus').textContent = `Message sent to seller`;
+        // You can implement further logic for sending the message
+    }
+
+    // Function to place an offer
+    function placeOffer() {
+        // Implement your logic for placing an offer
+        document.getElementById('offerStatus').innerHTML = "This product has an authenticity score of 4/10. It is not qualified, and the other user is now banned.";
+        // You can implement further logic for handling the offer placement
+    }
+</script>
+
+</body>
+</html>

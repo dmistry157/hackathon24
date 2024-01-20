@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Page</title>
+    <link rel="stylesheet" href="browse.css">
+    <script>
+    
+    
+    document.addEventListener("DOMContentLoaded", (event) => {
+        const streamToText = async (blob) => {
+      const readableStream = await blob.getReader();
+      const chunk = await readableStream.read();
+
+      return new TextDecoder('utf-8').decode(chunk.value);
+    }
+    const bufferToText = (buffer) => {
+      const bufferByteLength = buffer.byteLength;
+      const bufferUint8Array = new Uint8Array(buffer, 0, bufferByteLength);
+
+      return new TextDecoder().decode(bufferUint8Array);
+    };
+
+    document.getElementById('input').addEventListener('change', function(e) {
+      (async () => {
+        let file = document.getElementById('input').files[0];
+        let previewImage = URL.createObjectURL(file)
+        let imageElement = document.getElementById('uploaded-image')
+        imageElement.src = previewImage
+        const fileContent = await file.text();
+
+        console.log('.text()', fileContent);
+
+        const fileContentStream = await file.stream();
+
+        console.log('.stream()', await streamToText(fileContentStream));
+
+        const buffer = await file.arrayBuffer();
+
+        console.log('.buffer()', bufferToText(buffer));
+
+        const fileSliceBlob = file.slice(0, file.length);
+        const fileSliceBlobStream = await fileSliceBlob.stream();
+
+        console.log('.slice() and .stream()', await streamToText(fileSliceBlobStream));
+      })();
+    });
+
+    });
+
+    </script>
+</head>
+<body>
+
+  <header>
+    <div id="homeButtonContainer">
+        <a href="main.html" id="homeButton">
+            <img class="browseToMain" src="treasuretradelogo.png" alt="Logo Icon"></a>
+        </a>
+    </div>
+<h1 class="cent italic-text">List Page</h1>
+
+    
+    <div id="profileContainer">
+        <a href="profile.html" id="profileButton">
+            <img class="browseToProfile" src="profile-icon.jpg" alt="Profile Icon">
+        </a>
+    </div>
+</header>
+
+<main>
+    <section class="left">
+        <h2 class="centered-text italic-text" contenteditable="true">Item 1(edit)</h2>
+        <p contenteditable="true">Description of the item. (Edit this text to describe your item)</p>
+
+<input type="file" id="input" />
+<img id="uploaded-image" src="#" alt="your image" />
+        
+
+
+  
+    </section>
+
+
+
+    <!-- Add more articles as needed -->
+
+</main>
+
+<footer>
+    <div class="button-container">
+        <button onclick="window.location.href='main.html'">Back to Main Page</button>
+        <button onclick="window.location.href='browse.html'">Browse Page</button>
+    </div>
+</footer>
+
+</body>
+</html>
+

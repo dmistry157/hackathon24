@@ -1,0 +1,133 @@
+/* Reset some default styles */
+body, h1, h2, p, img {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    height: 20px;
+    background-color: #000;
+    background-size: cover;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1{
+    color:#fff;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+#profileContainer {
+    position: absolute;
+    top: 5px;
+    right: 5px;            
+}
+
+#profileButton {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#homeButtonContainer {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+#homeButton {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+#profileButton img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-container{
+    position: absolute;
+    top: 190px;
+    left: 20px;
+    width: 25%;
+    padding: 20px;
+    background-color: #563d2d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#loginContainer {
+    width: 60%;
+    position: absolute;
+    top: 190px;
+    right: 40px; 
+    padding: 20px;
+    background-color: #999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#loginContainer h2{
+    color: #000;
+}
+
+#loginContainer button{
+    border-radius: 5px;
+    margin: 2px;
+    color: #000;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+/* Add more styles as needed */
